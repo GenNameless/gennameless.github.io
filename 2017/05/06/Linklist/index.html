@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="数据结构," />
 
 
 
@@ -87,12 +87,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Avalon">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="本文的ADT使用的是 数据结构（C语言版） 严蔚敏 吴伟民著 1.C++特性：引用（&amp;amp;）  在C语言中&amp;amp;是取址符，但是在C++中&amp;amp;不单单有取址这一种用法，还有做标识的作用。  最简单的用法就是：12int a=2;int &amp;amp;ra=a;//对引用声明时必须同时初始化。   此时ra=3;等同于a=3;  然而最常用的用法是用作函数参数，也是本文代码中所使用的应用。以交">
+<meta name="keywords" content="数据结构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="单链表ADT的C语言（使用了部分C++特性)实现代码">
+<meta property="og:url" content="http://yoursite.com/2017/05/06/Linklist/index.html">
 <meta property="og:site_name" content="Avalon">
+<meta property="og:description" content="本文的ADT使用的是 数据结构（C语言版） 严蔚敏 吴伟民著 1.C++特性：引用（&amp;amp;）  在C语言中&amp;amp;是取址符，但是在C++中&amp;amp;不单单有取址这一种用法，还有做标识的作用。  最简单的用法就是：12int a=2;int &amp;amp;ra=a;//对引用声明时必须同时初始化。   此时ra=3;等同于a=3;  然而最常用的用法是用作函数参数，也是本文代码中所使用的应用。以交">
+<meta property="og:updated_time" content="2017-05-06T08:05:19.656Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Avalon">
+<meta name="twitter:title" content="单链表ADT的C语言（使用了部分C++特性)实现代码">
+<meta name="twitter:description" content="本文的ADT使用的是 数据结构（C语言版） 严蔚敏 吴伟民著 1.C++特性：引用（&amp;amp;）  在C语言中&amp;amp;是取址符，但是在C++中&amp;amp;不单单有取址这一种用法，还有做标识的作用。  最简单的用法就是：12int a=2;int &amp;amp;ra=a;//对引用声明时必须同时初始化。   此时ra=3;等同于a=3;  然而最常用的用法是用作函数参数，也是本文代码中所使用的应用。以交">
 
 
 
@@ -120,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/06/Linklist/"/>
 
 
 
 
 
-  <title> Avalon </title>
+  <title> 单链表ADT的C语言（使用了部分C++特性)实现代码 | Avalon </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -151,9 +156,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -280,9 +283,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -312,10 +315,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/05/06/Linklist/" itemprop="url">
-                  单链表ADT的C语言（使用了部分C++特性)实现代码
-                </a>
+                单链表ADT的C语言（使用了部分C++特性)实现代码
               
             
           </h1>
@@ -388,9 +388,7 @@
       
 
       
-        
-          
-            <p><strong>本文的ADT使用的是 数据结构（C语言版） 严蔚敏 吴伟民著</strong></p>
+        <p><strong>本文的ADT使用的是 数据结构（C语言版） 严蔚敏 吴伟民著</strong></p>
 <p><strong>1.C++特性：引用（&amp;）</strong><br>  在C语言中&amp;是取址符，但是在C++中&amp;不单单有取址这一种用法，还有做标识的作用。<br>  最简单的用法就是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">int a=2;</div><div class="line">int &amp;ra=a;//对引用声明时必须同时初始化。</div></pre></td></tr></table></figure></p>
 <p>  此时ra=3;等同于a=3;<br>  然而最常用的用法是用作函数参数，也是本文代码中所使用的应用。以交换两个数值为例子。<br>传统的C语言做法是使用指针:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">void swap(int *a,int *b)</div><div class="line">&#123;</div><div class="line">int temp;</div><div class="line">temp=*a;</div><div class="line">*a=*b;</div><div class="line">*b=temp;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>这是非常麻烦的使用方法，当我们引入了引用机制后：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">void swap(int &amp;a,int &amp;b)</div><div class="line">&#123;</div><div class="line">int temp;</div><div class="line">temp=a;</div><div class="line">a=b;</div><div class="line">b=temp;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -403,39 +401,50 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div></pre></td><td class="code"><pre><div class="line">#include&lt;cstdio&gt;</div><div class="line">#include&lt;iostream&gt;</div><div class="line">#include&lt;cstdlib&gt;</div><div class="line">#define Elemtype int</div><div class="line">#define Status int</div><div class="line">#define OK 1</div><div class="line">#define ERROR -1</div><div class="line">typedef struct Node</div><div class="line">&#123;</div><div class="line">	struct Node * next;</div><div class="line">	Elemtype data;</div><div class="line">&#125; Node;</div><div class="line">typedef  Node * PtrtoNode;</div><div class="line">typedef PtrtoNode Header;</div><div class="line">int main()</div><div class="line">&#123;</div><div class="line">	Header La=NULL;</div><div class="line">	Header InitList(void);</div><div class="line">	Status DestroyList(Header L);</div><div class="line">	Status ClearList(Header L);</div><div class="line">	int ListEmpty(Header L);</div><div class="line">	int ListLength(Header L);</div><div class="line">	Status GetElem(Header L, int i, Elemtype &amp;e);</div><div class="line">	int LocateElem(Header L, Elemtype e);</div><div class="line">	Status PriorElem(Header L, Elemtype cur_e, Elemtype &amp;pre_e);</div><div class="line">	Status NextElem(Header L, Elemtype cur_e, Elemtype &amp;next_e);</div><div class="line">	Status ListInsert(Header L, int i, Elemtype e);</div><div class="line">	Status ListDelete(Header L, int i);</div><div class="line">	Status ListTraverse(Header L);</div><div class="line">	return 0;</div><div class="line">&#125;</div><div class="line">//初始化线性表</div><div class="line">Header InitList(void) &#123;</div><div class="line">	PtrtoNode L;</div><div class="line">	L = (PtrtoNode)malloc(sizeof(Node));</div><div class="line">	if (!L) exit(EXIT_FAILURE);</div><div class="line">	L-&gt;next = NULL;	</div><div class="line">	return L;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//销毁线性表</div><div class="line">Status DestroyList(Header L) &#123;</div><div class="line">	if (!L)return ERROR;</div><div class="line">	PtrtoNode p = L;</div><div class="line">	PtrtoNode t;</div><div class="line">	while (p) &#123;</div><div class="line">		t = p;</div><div class="line">		p = p-&gt;next;</div><div class="line">		free(t);</div><div class="line">	&#125;</div><div class="line">	return OK;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//将线性表重置为空表</div><div class="line">Status ClearList(Header L) &#123;</div><div class="line">	if (!L)return ERROR;</div><div class="line">	PtrtoNode p = L-&gt;next;</div><div class="line">	PtrtoNode t;</div><div class="line">	while (p) &#123;</div><div class="line">		t = p;</div><div class="line">		p = p-&gt;next;</div><div class="line">		free(t);</div><div class="line">	&#125;</div><div class="line">	L-&gt;next = NULL;</div><div class="line">		return OK;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//检验是否为空表 是则返回true 否则返回false</div><div class="line">int ListEmpty(Header L) &#123;</div><div class="line">	if (!L) exit(-1);</div><div class="line">	return L-&gt;next == NULL;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//返回L中元素的个数</div><div class="line">int ListLength(Header L) &#123;</div><div class="line">	int i=1;</div><div class="line">	if (!L)exit(-1);</div><div class="line">	PtrtoNode p = L-&gt;next;</div><div class="line">	while (p) &#123;</div><div class="line">		p = p-&gt;next;</div><div class="line">		++i;</div><div class="line">	&#125;</div><div class="line">	return i-1;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//用e返回L中第i个元素的值</div><div class="line">Status GetElem(Header L, int i, Elemtype &amp;e) &#123;</div><div class="line">	int j = 1;</div><div class="line">	PtrtoNode p = L-&gt;next;</div><div class="line">	while (p&amp;&amp;j &lt; i) &#123;</div><div class="line">		p = p-&gt;next;</div><div class="line">		++j;</div><div class="line">	&#125;</div><div class="line">	if (!p || j &gt; i) return ERROR;</div><div class="line">	e = p-&gt;data;</div><div class="line">	return OK;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//返回第一个与e相同的数据元素的位序</div><div class="line">int LocateElem(Header L, Elemtype e) &#123;</div><div class="line">	if (!L) exit(-1);</div><div class="line">	PtrtoNode p = L-&gt;next;</div><div class="line">	int i=1;</div><div class="line">	while (p&amp;&amp;e != p-&gt;data) &#123;</div><div class="line">		p = p-&gt;next;</div><div class="line">		++i;</div><div class="line">	&#125;</div><div class="line">	if (!p) return -1;</div><div class="line">	return i;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//找出cur_e并用pre_e存储它的前驱值</div><div class="line">Status PriorElem(Header L, Elemtype cur_e, Elemtype &amp;pre_e) &#123;</div><div class="line">	if (!L) exit(-1);</div><div class="line">	PtrtoNode p = L;</div><div class="line">	if (p-&gt;next-&gt;data == cur_e) return ERROR;</div><div class="line">	else p = p-&gt;next;</div><div class="line">	while (p-&gt;next&amp;&amp;p-&gt;next-&gt;data != cur_e) &#123;</div><div class="line">		p = p-&gt;next;</div><div class="line">	&#125;</div><div class="line">	if (!p-&gt;next)return ERROR;</div><div class="line">	pre_e = p-&gt;data;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//找出cur_e并用next_e存储它的后继值</div><div class="line">Status NextElem(Header L, Elemtype cur_e, Elemtype &amp;next_e) &#123;</div><div class="line">	if (!L) exit(-1);</div><div class="line">	PtrtoNode p = L-&gt;next;</div><div class="line">	while (p&amp;&amp;p-&gt;data != cur_e) &#123;</div><div class="line">		p = p-&gt;next;</div><div class="line">	&#125;</div><div class="line">	if (!p-&gt;next) exit(ERROR);</div><div class="line">	next_e = p-&gt;next-&gt;data;</div><div class="line">	return OK;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//在L的第i个位置前插入新的数据元素e</div><div class="line">Status ListInsert(Header L, int i, Elemtype e) &#123;</div><div class="line">	if (!L||i&lt;1) exit(-1);</div><div class="line">	int j = 0;</div><div class="line">	PtrtoNode p = L;</div><div class="line">	PtrtoNode t = (PtrtoNode)malloc(sizeof(Node));</div><div class="line">	while (p&amp;&amp;j &lt; i - 1) &#123;</div><div class="line">		p = p-&gt;next;</div><div class="line">		++j;</div><div class="line">	&#125;</div><div class="line">	if (!p || j &gt; i - 1) return ERROR;</div><div class="line">	t-&gt;data = e;</div><div class="line">	t-&gt;next = p-&gt;next;</div><div class="line">	p-&gt;next = t;</div><div class="line">	return OK;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//删除第i个元素</div><div class="line">Status ListDelete(Header L, int i) &#123;</div><div class="line">	if (!L || i &lt; 1) exit(-1);</div><div class="line">	int j = 1;</div><div class="line">	PtrtoNode p = L-&gt;next;</div><div class="line">	PtrtoNode t = NULL;</div><div class="line">	while (p&amp;&amp;j &lt; i-1) &#123;</div><div class="line">		p = p-&gt;next;</div><div class="line">		++j;</div><div class="line">	&#125;</div><div class="line">	if (!(p-&gt;next) || j &gt; i)return ERROR;</div><div class="line">	t = p-&gt;next;</div><div class="line">	p-&gt;next = p-&gt;next-&gt;next;</div><div class="line">	free(t);</div><div class="line">	return OK;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//遍历线性表</div><div class="line">Status ListTraverse(Header L) &#123;</div><div class="line">	if (!L)exit(-1);</div><div class="line">	PtrtoNode p = L-&gt;next;</div><div class="line">	while (p) &#123;</div><div class="line">		printf(&quot;%d\n&quot;, p-&gt;data);</div><div class="line">		p = p-&gt;next;</div><div class="line">	&#125;</div><div class="line">	return OK;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>以上代码我都用驱动程序和小数据跑了一下，没有发现错误。<br>因为我也很菜，所以代码可能不是很标准。<br>有问题请您务必指正。<br>E-Mail：gennameless@gmail.com</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+          
+        </div>
+      
+
+      
+        
+      
 
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
           
           </div>
@@ -443,6 +452,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -637,6 +650,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
